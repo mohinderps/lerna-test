@@ -50,12 +50,10 @@ class AddCardModal extends React.Component {
         }
     }
 
-    setNumber = number => {
-        this.setState({
-            number,
-            card: valid.number(number).card
-        });
-    }
+    setNumber = number => /^[0-9]*$/.test(number) && this.setState({
+        number,
+        card: valid.number(number).card
+    });
 
     setMonth = month => this.setState({month});
     
