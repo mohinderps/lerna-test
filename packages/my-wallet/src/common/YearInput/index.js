@@ -23,7 +23,7 @@ const customStyles = {
     control: provided => ({
         ...provided,
         fontSize: '16px',
-        height: '45px'
+        height: '45px',
     })
 }
 

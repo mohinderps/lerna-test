@@ -1,24 +1,29 @@
 import React from 'react';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 import MyCards from '../MyCards';
 import Heading from '../../common/Heading';
 
+const Container = styled.div`
+    padding: 40px 25px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+`;
+
+const MainContent = styled.div`
+    flex-grow: 1;
+    overflow-y: scroll;
+`
 class Wallet extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            cards: [
-                {   
-                    id: 1,
-                },
-                {
-                    id: 2,
-                }
-            ]
+            cards: []
         };
     }
 
     addCard = card => {
+        console.log('card', card);
         const {cards} = this.state;
         this.setState({
             cards: [card, ...cards]
@@ -35,14 +40,16 @@ class Wallet extends React.Component {
     render() {
         const {cards} = this.state;
         return (
-            <React.Fragment>
+            <Container>
                 <Heading>My Wallet</Heading>
-                <MyCards 
-                    cards={cards}
-                    addCard={this.addCard}
-                    removeCard={this.removeCard}
-                />
-            </React.Fragment>
+                <MainContent>
+                    <MyCards 
+                        cards={cards}
+                        addCard={this.addCard}
+                        removeCard={this.removeCard}
+                    />
+                </MainContent>
+            </Container>
         );
         
 

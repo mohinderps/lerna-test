@@ -8,7 +8,7 @@ const Container = styled.div`
     height: 45px;
     border-width: 1px;
     border-style: solid;
-    border-color: rgb(204, 204, 204);
+    border-color: ${props => props.theme.border};
     border-radius: 4px;
     box-sizing: border-box;
     display: flex;
@@ -22,12 +22,13 @@ const StyledInput = styled.input`
     outline: 0;
     border: 0;
     font-size: 16px;
-    color: rgb(51, 51, 51);
+    color: ${props => props.theme.black};
     flex-grow: 1;
 
     &::placeholder {
-        color: rgb(128, 128, 128);
+        color: ${props => props.theme.placeholder};
     }
+
 `;
 
 const CardImage = styled.img`

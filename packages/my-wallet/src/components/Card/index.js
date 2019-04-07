@@ -23,12 +23,12 @@ class Card extends React.Component {
     }
 
     render() {
-        const {id, removeCard} = this.props;
+        const {removeCard, ...rest} = this.props;
         const {showModal} = this.state;
 
         return (
             <div>
-                <span>{id}</span>
+                {console.log(rest)}
                 <SecondaryButton handleClick={this.openModal}>Remove</SecondaryButton>
                 
                 {showModal && (

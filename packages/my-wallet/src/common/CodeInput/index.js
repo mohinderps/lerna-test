@@ -8,7 +8,7 @@ const StyledInput = styled.input`
     height: 45px;
     border-width: 1px;
     border-style: solid;
-    border-color: rgb(204, 204, 204);
+    border-color: ${props => props.theme.border};
     border-radius: 4px;
     cursor: default;
     display: flex;
@@ -17,10 +17,10 @@ const StyledInput = styled.input`
     outline: 0;
     font-size: 16px;
     padding: 0 8px;
-    color: rgb(51, 51, 51);
+    color: ${props => props.theme.black};
 
     &::placeholder {
-        color: rgb(128, 128, 128);
+        color: ${props => props.theme.placeholder};
     }
 `;
 

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import { FaTimes } from 'react-icons/fa';
+import { IconContext } from 'react-icons';
 
 const StyledModalInner = styled.div`
     position: fixed;
@@ -15,7 +16,7 @@ const StyledModalInner = styled.div`
 const StyledModalContent = styled.div`
     position: fixed;
     background: white;
-    width: 500px;
+    width: 600px;
     height: auto;
     top: 50%;
     left: 50%;
@@ -29,7 +30,7 @@ const Header = styled.div`
 `;
 
 const Body = styled.div`
-    padding: 20px;
+    padding: 10px 20px 30px 20px;
 `;
 
 const Action = styled.div`
@@ -41,7 +42,9 @@ const ModalInner = ({closeModal, children}) => (
         <StyledModalContent onClick={e => e.stopPropagation()}>
             <Header>
                 <Action onClick={closeModal}>
-                    <FaTimes />
+                    <IconContext.Provider value={{color: '#9e9e9e'}}>
+                        <FaTimes />
+                    </IconContext.Provider>
                 </Action>
             </Header>
             <Body>

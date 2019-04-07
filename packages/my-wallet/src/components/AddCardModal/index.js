@@ -10,7 +10,7 @@ import YearInput from '../../common/YearInput';
 import CodeInput from '../../common/CodeInput';
 
 const Container = styled.div`
-    padding: 30px 10px;
+    padding: 30px 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -85,8 +85,15 @@ class AddCardModal extends React.Component {
 
     isCardValid = () => this.isNumberValid() && this.isMonthValid() && this.isYearValid() && this.isCodeValid(); 
 
+    onSubmit = () => {
+        const {addCard, closeModal} = this.props;
+        const card = {...this.state};
+        addCard(card);
+        closeModal();
+    }
+
     render() {
-        const {closeModal, addCard} = this.props;
+        const {closeModal} = this.props;
         const {number, month, year, code, card} = this.state;
         return (
             <Modal closeModal={closeModal}>
@@ -125,7 +132,11 @@ class AddCardModal extends React.Component {
                         />
                     </StyledCodeInput>
                 </Container>
-                <PrimaryButton width="50%" disabled={!this.isCardValid()}>Add Card</PrimaryButton>
+                <PrimaryButton 
+                    width="50%" 
+                    disabled={!this.isCardValid()}
+                    handleClick={this.onSubmit}
+                >Add Card</PrimaryButton>
             </Modal>
         );
     }

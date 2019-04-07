@@ -3,18 +3,22 @@ import styled from 'styled-components';
 import Card from '../Card';
 import AddCardModal from '../AddCardModal';
 import PrimaryButton from '../../common/PrimaryButton';
+import EmptyWallet from '../EmptyWallet';
 
 const Container = styled.div`
-    border: 1px solid red;
+    border-width: 1px;
+    border-style: solid;
+    border-color: ${props => props.theme.border}
     border-radius: 5px;
-    margin-top: 10px;
+    margin-top: 20px;
+    padding: 20px 50px
 `;
 
 class MyCards extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            showModal: true
+            showModal: false
         };
     }
 
@@ -36,11 +40,11 @@ class MyCards extends React.Component {
 
         return (
             <Container>
-                {cards.length === 0 && <div>No card added. Click to add new cards.</div>}
+                {/* {cards.length === 0 && <EmptyWallet />} */}
                 
-                {cards.map(card => <Card key={card.id} {...card} removeCard={removeCard} />)}
+                {cards.map((card, index) => <Card key={index} {...card} removeCard={removeCard} />)}
                 
-                <PrimaryButton handleClick={this.openModal}>Add New Card</PrimaryButton>
+                <PrimaryButton width="25%" handleClick={this.openModal}>Add New Card</PrimaryButton>
                 
                 {showModal && (
                     <AddCardModal 

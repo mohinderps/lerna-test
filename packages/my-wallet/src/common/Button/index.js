@@ -5,7 +5,7 @@ const StyledButton = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40px;
+    height: 50px;
     width: ${props => props.width ? props.width : '100%'}
     cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
     opacity: ${props => props.disabled ? 0.6 : 1};
@@ -15,7 +15,7 @@ const StyledButton = styled.button`
     border-color: ${props => props.theme.primary};
     background-color: ${props => props.primary ? props.theme.primary: props.theme.white};
     color: ${props => props.primary ? props.theme.white: props.theme.primary };
-    font-size: 1em;
+    font-size: 1.25em;
     font-weight: 500;
 `;
 
