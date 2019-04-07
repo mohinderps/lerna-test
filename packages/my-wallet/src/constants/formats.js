@@ -43,6 +43,17 @@ const formats = [
     }
   ];
 
+export const maskNumber = (cardNumber, card) => {
+  const formattedNumber = formatCardNumber(cardNumber, card);
+  const formattedNumberArr = formattedNumber.split(' ');
+  return formattedNumberArr.map((n, index) => {
+    if(index === 0 || index === formattedNumberArr.length - 1) {
+      return n; 
+    }
+    return n.split('').map(_ => 'X').join('');
+  }).join(' ');
+}
+
 export const formatCardNumber = (cardNumber, card) => {
     if (!card) {
         return cardNumber

@@ -22,7 +22,7 @@ class Wallet extends React.Component {
                 {
                     code: '111',
                     month: '04',
-                    number: '4572740601031314',
+                    number: '4572000000001111',
                     year: '2023',
                     card: {
                         code: {
@@ -57,7 +57,6 @@ class Wallet extends React.Component {
 
     render() {
         const {cards} = this.state;
-        console.log(cards);
         return (
             <Container>
                 <Heading>My Wallet</Heading>

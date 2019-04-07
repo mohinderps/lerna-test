@@ -51,7 +51,6 @@ class AddCardModal extends React.Component {
     }
 
     setNumber = number => {
-        console.log(number);
         this.setState({
             number,
             card: valid.number(number).card
@@ -69,22 +68,21 @@ class AddCardModal extends React.Component {
         return valid.number(number).isValid;
     }
 
-    isMonthValid = () => {
-        const {month} = this.state;
-        return valid.expirationMonth(month).isValid;
-    }
-
-    isYearValid = () => {
-        const {year} = this.state;
-        return valid.expirationYear(year).isValid;
+    isDateValid = () => {
+        const {month, year} = this.state;
+        return valid.expirationDate({
+            month,
+            year
+        }).isValid;
     }
 
     isCodeValid = () => {
-        const {code} = this.state;
-        return valid.cvv(code).isValid;
+        const {code, card} = this.state;
+        const maxLength = (card && card.code.size) || 3;
+        return valid.cvv(code, maxLength).isValid;
     }
 
-    isCardValid = () => this.isNumberValid() && this.isMonthValid() && this.isYearValid() && this.isCodeValid(); 
+    isCardValid = () => this.isNumberValid() && this.isDateValid() && this.isCodeValid(); 
 
     onSubmit = () => {
         const {addCard, closeModal} = this.props;
@@ -129,7 +127,9 @@ class AddCardModal extends React.Component {
                         <CodeInput 
                             setCode={this.setCode}
                             value={code}
-                            label="CVV"
+                            label={card ? card.code.name : 'CVV'}
+                            placeholder={card ? card.code.name : 'CVV'}
+                            maxLength={card ? card.code.size : 3}
                         />
                     </StyledCodeInput>
                 </Container>

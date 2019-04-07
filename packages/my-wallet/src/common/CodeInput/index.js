@@ -24,13 +24,15 @@ const StyledInput = styled.input`
     }
 `;
 
-const CodeInput = ({setCode, value, label}) => (
+const CodeInput = ({setCode, value, label, placeholder, maxLength}) => (
     <React.Fragment>
         <Label>{label}</Label>
         <StyledInput
+            type="password"
             value={value}
             onChange={e => setCode(e.target.value)}
-            placeholder="CVV"
+            placeholder={placeholder}
+            maxLength={maxLength}
         />
     </React.Fragment>
 )

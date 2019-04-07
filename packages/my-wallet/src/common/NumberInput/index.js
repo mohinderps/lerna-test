@@ -19,7 +19,7 @@ const Container = styled.div`
 `;
 
 const StyledInput = styled.input`
-    cursor: default;
+    cursor: text;
     outline: 0;
     border: 0;
     font-size: 16px;
@@ -45,7 +45,7 @@ const NumberInput = ({setNumber, value, label, card}) => {
         <React.Fragment>
             <Label>{label}</Label>
             <Container>
-                <StyledInput 
+                <StyledInput
                     value={formatCardNumber(value, card)}
                     onChange={e => setNumber(rawNumber(e.target.value))}
                     placeholder="Enter Debit / Credit Card Number"
