@@ -5,7 +5,7 @@ import PaymentIcons from '../../constants/paymentIcons';
 
 const Container = styled.div`
     width: 100%;
-    height: 38px;
+    height: 45px;
     border-width: 1px;
     border-style: solid;
     border-color: rgb(204, 204, 204);

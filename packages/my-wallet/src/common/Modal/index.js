@@ -21,29 +21,32 @@ const StyledModalContent = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
+    border-radius: 5px;
 `;
 
 const Header = styled.div`
-    display: flex;
-    justify-content: space-between;
+    text-align: right;
+`;
+
+const Body = styled.div`
+    padding: 20px;
 `;
 
 const Action = styled.div`
     cursor: pointer;
 `;
 
-const ModalInner = ({closeModal, title, children}) => (
+const ModalInner = ({closeModal, children}) => (
     <StyledModalInner onClick={closeModal}>
         <StyledModalContent onClick={e => e.stopPropagation()}>
             <Header>
-                {title}
                 <Action onClick={closeModal}>
                     <FaTimes />
                 </Action>
             </Header>
-            <div>
+            <Body>
                 {children}
-            </div>
+            </Body>
         </StyledModalContent>
     </StyledModalInner>
 );

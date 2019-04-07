@@ -16,7 +16,7 @@ const theme = {
 
     background: ['#bdbdbd', '#eaeaea', '#f5f5f5', '#ffffff'],
 
-    primary: '#FF0000'
+    primary: '#0FACF3'
 
 };
 

@@ -5,7 +5,7 @@ import Label from '../Label';
 const StyledInput = styled.input`
     box-sizing: border-box;
     width: 100%;
-    height: 38px;
+    height: 45px;
     border-width: 1px;
     border-style: solid;
     border-color: rgb(204, 204, 204);

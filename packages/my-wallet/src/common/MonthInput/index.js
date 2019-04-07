@@ -12,7 +12,8 @@ const options = months.map(m => ({
 const customStyles = {
     control: provided => ({
         ...provided,
-        fontSize: '16px'
+        fontSize: '16px',
+        height: '45px'
     })
 }
 

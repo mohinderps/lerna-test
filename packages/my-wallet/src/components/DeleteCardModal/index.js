@@ -3,7 +3,7 @@ import Modal from '../../common/Modal'
 
 const DeleteCardModal = ({closeModal, removeCard}) => (
     <div>
-        <Modal closeModal={closeModal} title="Delete Card"/>
+        <Modal closeModal={closeModal} />
     </div>
 );
 

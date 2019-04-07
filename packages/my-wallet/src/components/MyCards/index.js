@@ -14,7 +14,7 @@ class MyCards extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            showModal: false
+            showModal: true
         };
     }
 

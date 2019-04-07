@@ -22,7 +22,8 @@ const options = years.map(y => ({
 const customStyles = {
     control: provided => ({
         ...provided,
-        fontSize: '16px'
+        fontSize: '16px',
+        height: '45px'
     })
 }
 
