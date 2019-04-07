@@ -40,7 +40,7 @@ const CardImage = styled.img`
 `;
 
 
-const NumberInput = ({setNumber, value, label, card}) => {
+const NumberInput = ({setNumber, value, label, card, maxLength}) => {
     return (
         <React.Fragment>
             <Label>{label}</Label>
@@ -49,6 +49,7 @@ const NumberInput = ({setNumber, value, label, card}) => {
                     value={formatCardNumber(value, card)}
                     onChange={e => setNumber(rawNumber(e.target.value))}
                     placeholder="Enter Debit / Credit Card Number"
+                    maxLength={maxLength}
                 />
                 {card && card.type && <CardImage src={PaymentIcons[card.type]} />}
             </Container>

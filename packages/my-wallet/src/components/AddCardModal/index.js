@@ -104,6 +104,7 @@ class AddCardModal extends React.Component {
                             value={number}
                             label="Enter Debit / Credit Card Number"
                             card={card}
+                            maxLength={card ? card.lengths[0] + card.gaps.length : 16}
                         />
                     </StyledNumberInput>
 
