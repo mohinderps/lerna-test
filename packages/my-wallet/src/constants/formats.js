@@ -64,3 +64,5 @@ export const formatCardNumber = (cardNumber, card) => {
     }
     return cardNumber;
   };
+
+export const rawNumber = cardNumber => cardNumber.replace(/\s/g, '');

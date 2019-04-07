@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Label from '../Label';
 import PaymentIcons from '../../constants/paymentIcons';
-import {formatCardNumber} from '../../constants/formats';
+import {formatCardNumber, rawNumber} from '../../constants/formats';
 
 const Container = styled.div`
     width: 100%;
@@ -47,7 +47,7 @@ const NumberInput = ({setNumber, value, label, card}) => {
             <Container>
                 <StyledInput 
                     value={formatCardNumber(value, card)}
-                    onChange={e => setNumber(e.target.value)}
+                    onChange={e => setNumber(rawNumber(e.target.value))}
                     placeholder="Enter Debit / Credit Card Number"
                 />
                 {card && card.type && <CardImage src={PaymentIcons[card.type]} />}

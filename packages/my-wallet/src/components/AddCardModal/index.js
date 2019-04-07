@@ -51,6 +51,7 @@ class AddCardModal extends React.Component {
     }
 
     setNumber = number => {
+        console.log(number);
         this.setState({
             number,
             card: valid.number(number).card
