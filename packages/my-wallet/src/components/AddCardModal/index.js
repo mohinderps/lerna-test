@@ -89,7 +89,6 @@ class AddCardModal extends React.Component {
         const {addCard, closeModal} = this.props;
         const newCard = {...this.state};
         addCard(newCard);
-        console.log(newCard);
         closeModal();
     }
 

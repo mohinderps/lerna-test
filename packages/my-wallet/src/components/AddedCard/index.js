@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PaymentIcons from '../../constants/paymentIcons';
 import Label from '../../common/Label';
+import {formatCardNumber} from '../../constants/formats';
 
 const StyledDiv = styled.div`
     border-width: 1px;
@@ -32,7 +33,7 @@ const AddedCard = ({number, card}) => (
     <StyledDiv>
         <CardNumber>
             <Label>Card Number</Label>
-            <div>{number}</div>
+            <div>{formatCardNumber(number, card)}</div>
         </CardNumber>
         <CardImage src={PaymentIcons[card.type]} alt={`${card.niceType} Payment Icon`} />
     </StyledDiv>

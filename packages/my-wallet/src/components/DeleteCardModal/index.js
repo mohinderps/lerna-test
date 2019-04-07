@@ -31,7 +31,10 @@ const DeleteCardModal = ({closeModal, removeCard, number}) => (
         <Heading center>Are you sure you want to delete this card?</Heading>
         <Container>
             <StyledButton>
-                <PrimaryButton handleClick={() => removeCard(number)}>OK</PrimaryButton>
+                <PrimaryButton handleClick={() => {
+                    removeCard(number);
+                    closeModal()
+                }}>OK</PrimaryButton>
             </StyledButton>
             <StyledButton>
                 <SecondaryButton handleClick={closeModal}>Cancel</SecondaryButton>
