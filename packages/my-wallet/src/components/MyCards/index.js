@@ -44,7 +44,7 @@ class MyCards extends React.Component {
                 
                 {cards.map((card, index) => <Card key={index} {...card} removeCard={removeCard} />)}
                 
-                <PrimaryButton width="25%" handleClick={this.openModal}>Add New Card</PrimaryButton>
+                <PrimaryButton width="400px" handleClick={this.openModal}>Add New Card</PrimaryButton>
                 
                 {showModal && (
                     <AddCardModal 

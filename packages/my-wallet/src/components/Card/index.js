@@ -1,6 +1,15 @@
 import React from 'react'
+import styled from 'styled-components';
 import SecondaryButton from '../../common/SecondaryButton';
 import DeleteCardModal from '../DeleteCardModal';
+import AddedCard from '../AddedCard';
+
+const Container = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+`;
 
 class Card extends React.Component {
     constructor(props) {
@@ -23,13 +32,13 @@ class Card extends React.Component {
     }
 
     render() {
-        const {removeCard, number, month, year, code, card} = this.props;
+        const {removeCard, number, card} = this.props;
         const {showModal} = this.state;
 
         return (
-            <div>
-                <SecondaryButton handleClick={this.openModal}>Remove</SecondaryButton>
-                
+            <Container>
+                <AddedCard number={number} card={card} />
+                <SecondaryButton handleClick={this.openModal} width="250px">Remove</SecondaryButton>
                 {showModal && (
                     <DeleteCardModal 
                         closeModal={this.closeModal} 
@@ -37,7 +46,7 @@ class Card extends React.Component {
                         number={number}
                     />
                 )}
-            </div>
+            </Container>
         );
     }
 }

@@ -36,6 +36,24 @@ class Wallet extends React.Component {
                         patterns: [4],
                         type: 'visa'
                     }
+                },
+                {
+                    code: '111',
+                    month: '04',
+                    number: '4572740601031314',
+                    year: '2023',
+                    card: {
+                        code: {
+                            name: 'CVV',
+                            size: 3
+                        },
+                        gaps: [4, 8, 12],
+                        lengths: [16, 18, 19],
+                        matchStrength: 1,
+                        niceType: 'Visa',
+                        patterns: [4],
+                        type: 'visa'
+                    }
                 }
             ]
         };
