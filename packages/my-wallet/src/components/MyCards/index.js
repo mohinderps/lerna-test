@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Card from '../Card';
 import AddCardModal from '../AddCardModal';
 import PrimaryButton from '../../common/PrimaryButton';
-import EmptyWallet from '../EmptyWallet';
 
 const Container = styled.div`
     border-width: 1px;
