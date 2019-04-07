@@ -16,7 +16,7 @@ const StyledModalInner = styled.div`
 const StyledModalContent = styled.div`
     position: fixed;
     background: white;
-    width: 600px;
+    width: ${props => props.width ? props.width: '600px'};
     height: auto;
     top: 50%;
     left: 50%;
@@ -37,9 +37,9 @@ const Action = styled.div`
     cursor: pointer;
 `;
 
-const ModalInner = ({closeModal, children}) => (
+const ModalInner = ({width, closeModal, children}) => (
     <StyledModalInner onClick={closeModal}>
-        <StyledModalContent onClick={e => e.stopPropagation()}>
+        <StyledModalContent onClick={e => e.stopPropagation()} width={width}>
             <Header>
                 <Action onClick={closeModal}>
                     <IconContext.Provider value={{color: '#9e9e9e'}}>

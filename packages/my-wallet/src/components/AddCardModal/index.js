@@ -70,7 +70,7 @@ class AddCardModal extends React.Component {
 
     isMonthValid = () => {
         const {month} = this.state;
-        return valid.expirationMonth(month).isValidForThisYear;
+        return valid.expirationMonth(month).isValid;
     }
 
     isYearValid = () => {
@@ -87,8 +87,9 @@ class AddCardModal extends React.Component {
 
     onSubmit = () => {
         const {addCard, closeModal} = this.props;
-        const card = {...this.state};
-        addCard(card);
+        const newCard = {...this.state};
+        addCard(newCard);
+        console.log(newCard);
         closeModal();
     }
 
@@ -96,7 +97,7 @@ class AddCardModal extends React.Component {
         const {closeModal} = this.props;
         const {number, month, year, code, card} = this.state;
         return (
-            <Modal closeModal={closeModal}>
+            <Modal closeModal={closeModal} width="600px">
                 <Heading>Add New Card</Heading>
                 <Container>
                     <StyledNumberInput>

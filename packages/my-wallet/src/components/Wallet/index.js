@@ -18,22 +18,40 @@ class Wallet extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            cards: []
+            cards: [
+                {
+                    code: '111',
+                    month: '04',
+                    number: '4572740601031314',
+                    year: '2023',
+                    card: {
+                        code: {
+                            name: 'CVV',
+                            size: 3
+                        },
+                        gaps: [4, 8, 12],
+                        lengths: [16, 18, 19],
+                        matchStrength: 1,
+                        niceType: 'Visa',
+                        patterns: [4],
+                        type: 'visa'
+                    }
+                }
+            ]
         };
     }
 
     addCard = card => {
-        console.log('card', card);
         const {cards} = this.state;
         this.setState({
             cards: [card, ...cards]
         });
     }
 
-    removeCard = id => {
+    removeCard = number => {
         const {cards} = this.state;
         this.setState({
-            cards: cards.filter(card => card.id !== id)
+            cards: cards.filter(card => card.number !== number)
         });
     }
 
