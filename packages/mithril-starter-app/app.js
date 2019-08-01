@@ -18,6 +18,17 @@ var Hello = {
     }
 }
 
+var Splash = {
+    view: function() {
+        return m('a', {href: '#!/hello'}, 'Enter')
+    }
+}
+
 // m.render(root, whatToRender);
 
-m.mount(root, Hello);
+// m.mount(root, Splash);
+
+m.route(root, '/splash', {
+    '/splash': Splash,
+    '/hello': Hello
+})
