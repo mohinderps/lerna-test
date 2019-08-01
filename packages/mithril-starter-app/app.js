@@ -7,4 +7,17 @@ var whatToRender = m('main', [
     m('button', 'A button')
 ]);
 
-m.render(root, whatToRender);
+var count = 0;
+
+var Hello = {
+    view: function() {
+        return m('main', [
+            m('h1', {class: 'title'}, 'Hello Worlds'),
+            m('button', {onclick: function() {count ++}},count + ' clicks')
+        ])
+    }
+}
+
+// m.render(root, whatToRender);
+
+m.mount(root, Hello);
